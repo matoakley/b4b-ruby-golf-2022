@@ -79,5 +79,6 @@ Rules
 -----
 
 * No editing of any file apart from `lib/golf.rb`
-* All code must go in the methods that are already there (`hole_1` etc)
-* Whitespace **does** count (apart from the spaces before the `def`)
+* All code must go in the methods that are already there (`hole_1` etc).
+* No extra classes or methds, evaluation of other files or any other creative cheating
+* Whitespace **does** count, apart from newlines and indentation

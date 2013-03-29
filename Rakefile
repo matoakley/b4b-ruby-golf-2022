@@ -86,8 +86,8 @@ class Hole
 
   def calculate_score
     method = Golf.method :"hole_#{@number}"
-    source = method.source.sub(/\A\s*(.*)\s*\Z/m, '\1')
-    @score = source.length
+    lines = method.source.split(/[\;\n]/)[1..-2].map &:strip
+    @score = lines.join.length
   end
 end
 
