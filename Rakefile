@@ -1,5 +1,6 @@
 require "rspec/core/rake_task"
-require "debugger"
+require "method_source"
+require_relative "lib/golf"
 
 RSpec::Core::RakeTask.new(:rspec)
 
@@ -23,7 +24,8 @@ end
 class Scorer
   def initialize file
     spec_output = File.read file
-    @holes = (1..2).map {|n| Hole.score n, spec_output }
+    number_of_holes = spec_output.lines.grep(/^  \.hole_\d+$/).count
+    @holes = (1..number_of_holes).map {|n| Hole.score n, spec_output }
   end
 
   def print_scores
@@ -33,9 +35,11 @@ class Scorer
   |  Hole  |  Shots  |  Total  |
   +--------+---------+---------+
     EOF
-    @holes.each do |hole|
-      hole.print
+    @holes.inject(Total.new) do |total, hole|
+      total << hole
+      hole.print total
       puts "  +--------+---------+---------+\n"
+      total
     end
   end
 end
@@ -46,13 +50,24 @@ class Hole
       @number = number
     end
 
-    def print
-      puts "  |   %2d   |  Failed |   ---   |" % @number
+    def success?
+      false
+    end
+
+    def print total_so_far
+      puts "  |   %2d   |  Failed |   %4s  |" % [@number, total_so_far]
     end
   end
 
+  attr_reader :score
+
   def initialize number
     @number = number
+    calculate_score
+  end
+
+  def success?
+    true
   end
 
   def self.score number, spec_output
@@ -63,7 +78,35 @@ class Hole
     spec_output !~ /^\s*\d+\) Golf.hole_#{number}\s/
   end
 
-  def print
-    puts "  |   %2d   |   %3d   |         |" % [@number, 42]
+  def print total_so_far
+    puts "  |   %2d   |   %3d   |   %4s  |" % [@number, @score, total_so_far]
+  end
+
+  private
+
+  def calculate_score
+    method = Golf.method :"hole_#{@number}"
+    source = method.source.sub(/\A\s*(.*)\s*\Z/m, '\1')
+    p source
+    @score = source.length
+  end
+end
+
+class Total
+  def initialize
+    @still_playing = true
+    @score = 0
+  end
+
+  def << hole
+    if hole.success?
+      @score += hole.score
+    else
+      @still_playing = false
+    end
+  end
+
+  def to_s
+    @still_playing ? @score.to_s : "----"
   end
 end
