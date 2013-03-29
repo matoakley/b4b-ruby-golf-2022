@@ -1,19 +1,28 @@
 IPRUG Ruby Golf 2013
 ====================
 
-Time for another Ruby golf challenge – can you pare your code down to fewer characters than everyone else?
+Time for another Ruby golf challenge – can you pare your code down to fewer
+characters than everyone else?
 
-There will be nine "holes" to complete (I'll provide the tests to describe them on the night, to stop anyone getting a head start). The winner is whoever gets the lowest total score for all nine, or if no-one finishes then the lowest total for the furthest hole (if that makes sense). No prizes I'm afraid, apart from the admiration of your peers.
+There will be nine "holes" to complete. I'll provide the tests to describe them
+on the night, to stop anyone getting a head start. And because I haven't
+written them yet.
+
+The winner is whoever gets the lowest total score for all nine, or if no-one
+finishes then the lowest total for the furthest hole (if that makes sense). No
+prizes I'm afraid, apart from the admiration of your peers.
 
 Requirements
 ------------
 
-Ruby 1.9.3 (any patchlevel, but has to be 1.9.3 so everyone's on a level playing field in terms of language features).
+Ruby 1.9.3 (any patchlevel, but has to be 1.9.3 so everyone's on a level
+playing field in terms of language features).
 
 Setup
 -----
 
-Before you turn up (to avoid having to download everything on the night over dodgy wifi):
+Before you turn up (to avoid having to download everything on the night over
+dodgy wifi):
 
     git clone https://github.com/kerryb/iprug-rubygolf-2013.git
     cd iprug-rubygolf-2013
