@@ -1,6 +1,8 @@
 IPRUG Ruby Golf 2013
 ====================
 
+[IPRUG, 2 April 2013](http://iprug.org/april-meeting)
+
 Time for another Ruby golf challenge – can you pare your code down to fewer
 characters than everyone else?
 
