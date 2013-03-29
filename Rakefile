@@ -23,7 +23,7 @@ end
 class Scorer
   def initialize file
     spec_output = File.read file
-    @scores = (1..2).map {|hole| Score.calculate hole, spec_output }
+    @holes = (1..2).map {|n| Hole.score n, spec_output }
   end
 
   def print_scores
@@ -33,37 +33,37 @@ class Scorer
   |  Hole  |  Shots  |  Total  |
   +--------+---------+---------+
     EOF
-    @scores.each do |score|
-      score.print
-      puts "  +--------+---------+---------+"
+    @holes.each do |hole|
+      hole.print
+      puts "  +--------+---------+---------+\n"
     end
   end
 end
 
-class Score
+class Hole
   class Failed
-    def initialize hole
-      @hole = hole
+    def initialize number
+      @number = number
     end
 
     def print
-      puts "  |   %2d   |  Failed |   ---   |" % @hole
+      puts "  |   %2d   |  Failed |   ---   |" % @number
     end
   end
 
-  def initialize hole
-    @hole = hole
+  def initialize number
+    @number = number
   end
 
-  def self.calculate hole, spec_output
-    completed_hole?(hole, spec_output) ? new(hole) : Failed.new(hole)
+  def self.score number, spec_output
+    completed?(number, spec_output) ? new(number) : Failed.new(number)
   end
 
-  def self.completed_hole? hole, spec_output
-    spec_output !~ /^\s*\d+\) Golf.hole_#{hole}\s/
+  def self.completed? number, spec_output
+    spec_output !~ /^\s*\d+\) Golf.hole_#{number}\s/
   end
 
   def print
-    puts "  |   %2d   |   %3d   |         |" % [@hole, 42]
+    puts "  |   %2d   |   %3d   |         |" % [@number, 42]
   end
 end
