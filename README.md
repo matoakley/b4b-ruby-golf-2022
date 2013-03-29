@@ -79,6 +79,7 @@ Rules
 -----
 
 * No editing of any file apart from `lib/golf.rb`
-* All code must go in the methods that are already there (`hole_1` etc).
+* All code must go in the methods that are already there (`hole_1` etc)
 * No extra classes or methds, evaluation of other files or any other creative cheating
+* The `def ...` line and the final `end` of each method don't count towards the score
 * Whitespace **does** count, apart from newlines and indentation
