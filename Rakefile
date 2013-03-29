@@ -87,7 +87,6 @@ class Hole
   def calculate_score
     method = Golf.method :"hole_#{@number}"
     source = method.source.sub(/\A\s*(.*)\s*\Z/m, '\1')
-    p source
     @score = source.length
   end
 end
