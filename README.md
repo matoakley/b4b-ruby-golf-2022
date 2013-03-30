@@ -31,6 +31,10 @@ dodgy wifi):
     gem install bundler
     bundle
 
+You'll probably want to grab an
+[offline copy of the Ruby core API docs](https://github.com/metamorfos/ruby-doc-1.9.3/archive/master.zip)
+too.
+
 Testing
 -------
 
