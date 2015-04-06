@@ -15,7 +15,7 @@ end
 task :specs do
   begin
     Rake::Task[:rspec].invoke
-  rescue RuntimeError
+  rescue Exception
   end
 end
 
