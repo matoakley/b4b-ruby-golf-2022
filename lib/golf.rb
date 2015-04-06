@@ -1,28 +1,28 @@
-module Golf
-  def self.hole_1
+class Golf
+  def hole_1
   end
 
-  def self.hole_2
+  def hole_2
   end
 
-  def self.hole_2
+  def hole_3
   end
 
-  def self.hole_4
+  def hole_4
   end
 
-  def self.hole_5
+  def hole_5
   end
 
-  def self.hole_6
+  def hole_6
   end
 
-  def self.hole_7
+  def hole_7
   end
 
-  def self.hole_8
+  def hole_8
   end
 
-  def self.hole_9
+  def hole_9
   end
 end

@@ -1,1 +1,1 @@
---format documentation --out spec_output.txt --format progress
+--format documentation --out spec_output.txt --format progress --order defined

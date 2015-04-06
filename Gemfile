@@ -1,6 +1,8 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-gem "debugger"
+ruby "2.2.1"
+
 gem "method_source"
+gem "pry"
 gem "rake"
 gem "rspec"

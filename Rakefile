@@ -1,3 +1,5 @@
+require "bundler/setup"
+require "pry"
 require "rspec/core/rake_task"
 require "method_source"
 require_relative "lib/golf"
@@ -7,7 +9,7 @@ RSpec::Core::RakeTask.new(:rspec)
 task :default => [:check_version, :specs, :score]
 
 task :check_version do
-  fail "Please run using Ruby 1.9.3" unless RUBY_VERSION == "1.9.3"
+  fail "Please run using Ruby 2.2.1" unless RUBY_VERSION == "2.2.1"
 end
 
 task :specs do
@@ -24,7 +26,7 @@ end
 class Scorer
   def initialize file
     spec_output = File.read file
-    number_of_holes = spec_output.lines.grep(/^  \.hole_\d+$/).count
+    number_of_holes = spec_output.lines.grep(/^  \#hole_\d+$/).count
     @holes = (1..number_of_holes).map {|n| Hole.score n, spec_output }
   end
 
@@ -75,7 +77,7 @@ class Hole
   end
 
   def self.completed? number, spec_output
-    spec_output !~ /^\s*\d+\) Golf.hole_#{number}\s/
+    spec_output !~ /^\s*\d+\) Golf#hole_#{number}\s/
   end
 
   def print total_so_far
@@ -85,8 +87,8 @@ class Hole
   private
 
   def calculate_score
-    method = Golf.method :"hole_#{@number}"
-    lines = method.source.split(/[\;\n]/)[1..-2].map &:strip
+    method = Golf.instance_method :"hole_#{@number}"
+    lines = method.source.split(/[\;\n]/)[1..-2].map(&:strip)
     @score = lines.join.length
   end
 end
