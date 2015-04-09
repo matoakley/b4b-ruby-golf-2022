@@ -1,7 +1,7 @@
 IPRUG Ruby Golf 2015
 ====================
 
-[IPRUG, 2 April 2015](http://iprug.org/2015/03/17/april-meeting-ruby-golf/)
+[IPRUG, 14 April 2015](http://iprug.org/2015/03/17/april-meeting-ruby-golf/)
 
 Time for another Ruby golf challenge – can you pare your code down to fewer
 characters than everyone else?
