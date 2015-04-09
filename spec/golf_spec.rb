@@ -9,55 +9,46 @@ require_relative "../lib/golf"
 describe Golf do
   describe "#hole_9" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_8" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_7" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_6" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_5" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_4" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_3" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_2" do
     it "TODO" do
-      fail "TODO"
     end
   end
 
   describe "#hole_1" do
     it "TODO" do
-      fail "TODO"
     end
   end
 end

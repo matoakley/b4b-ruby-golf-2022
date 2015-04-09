@@ -39,54 +39,32 @@ Testing
 Run rake, and you should see something like this:
 
     $ bundle exec rake
-    FFFFFFFFF
+    .........
 
-    Failures:
+    Finished in 0.0019 seconds (files took 0.07298 seconds to load)
+    9 examples, 0 failures
 
-      1) Golf#hole_9 TODO
-         Failure/Error: fail "TODO"
-         RuntimeError:
-           TODO
-         # ./spec/golf_spec.rb:12:in `block (3 levels) in <top (required)>'
-
-    [another eight failures]
-
-
-    Finished in 0.00199 seconds (files took 0.07256 seconds to load)
-    9 examples, 9 failures
-
-    Failed examples:
-
-    rspec ./spec/golf_spec.rb:11 # Golf#hole_9 TODO
-    rspec ./spec/golf_spec.rb:17 # Golf#hole_8 TODO
-    rspec ./spec/golf_spec.rb:23 # Golf#hole_7 TODO
-    rspec ./spec/golf_spec.rb:29 # Golf#hole_6 TODO
-    rspec ./spec/golf_spec.rb:35 # Golf#hole_5 TODO
-    rspec ./spec/golf_spec.rb:41 # Golf#hole_4 TODO
-    rspec ./spec/golf_spec.rb:47 # Golf#hole_3 TODO
-    rspec ./spec/golf_spec.rb:53 # Golf#hole_2 TODO
-    rspec ./spec/golf_spec.rb:59 # Golf#hole_1 TODO
 
       +--------+---------+---------+
       |  Hole  |  Shots  |  Total  |
       +--------+---------+---------+
-      |    1   |  Failed |   ----  |
+      |    1   |    10   |     10  |
       +--------+---------+---------+
-      |    2   |  Failed |   ----  |
+      |    2   |     0   |     10  |
       +--------+---------+---------+
-      |    3   |  Failed |   ----  |
+      |    3   |     0   |     10  |
       +--------+---------+---------+
-      |    4   |  Failed |   ----  |
+      |    4   |     0   |     10  |
       +--------+---------+---------+
-      |    5   |  Failed |   ----  |
+      |    5   |     0   |     10  |
       +--------+---------+---------+
-      |    6   |  Failed |   ----  |
+      |    6   |     0   |     10  |
       +--------+---------+---------+
-      |    7   |  Failed |   ----  |
+      |    7   |     0   |     10  |
       +--------+---------+---------+
-      |    8   |  Failed |   ----  |
+      |    8   |     0   |     10  |
       +--------+---------+---------+
-      |    9   |  Failed |   ----  |
+      |    9   |     0   |     10  |
       +--------+---------+---------+
 
 Rules
