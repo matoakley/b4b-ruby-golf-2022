@@ -9,7 +9,7 @@ RSpec::Core::RakeTask.new(:rspec)
 task :default => [:check_version, :specs, :score]
 
 task :check_version do
-  fail "Please run using Ruby 2.2.1" unless RUBY_VERSION == "2.2.1"
+  fail "Please run using Ruby 2.2" unless RUBY_VERSION.start_with? "2.2"
 end
 
 task :specs do
