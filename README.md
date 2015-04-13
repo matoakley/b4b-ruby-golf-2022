@@ -17,7 +17,7 @@ prizes I'm afraid, apart from the admiration of your peers.
 Requirements
 ------------
 
-Ruby 2.2.1 (so everyone's on a level playing field in terms of language features).
+Ruby 2.2 (so everyone's on a level playing field in terms of language features).
 
 Setup
 -----
