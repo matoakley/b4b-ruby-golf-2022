@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.1"
+ruby "3.0.4"
 
 gem "method_source"
 gem "pry"
