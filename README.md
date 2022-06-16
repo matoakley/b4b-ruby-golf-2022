@@ -1,6 +1,10 @@
 B4B Ruby Golf 2022
 ====================
 
+This Ruby Golf Challenge has been shamelessly borrowed from the fantastically
+clever [@kerryb](https://github.com/kerryb) and I (sadly) cannot take any credit
+for the terrifyingly difficult tasks.
+
 There will be nine "holes" to complete. 
 
 Requirements
